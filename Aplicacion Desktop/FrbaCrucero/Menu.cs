@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FrbaCrucero
+{
+    
+    public partial class Menu : Form
+    {
+        string fecha;
+        public Menu(int idUser, string fecha)
+        {
+
+            InitializeComponent();
+            if (idUser == -1) {
+                idUser = Convert.ToInt32(
+                            Funciones.GetStringFromQuery(
+                                "select id from Usuario where nombre = 'cliente'",
+                                "id"
+                            )
+                        );
+            }
+
+            this.fecha = fecha;
+            string query = @"select f.nombre 
+                                from Usuario u
+                                join Usuario_rol ur on ur.id_usuario = u.id
+                                join Rol_funcionalidad rf on rf.id_rol = ur.id_rol
+                                join Funcionalidad f on rf.id_funcionalidad = f.id
+                                where u.id =" + idUser ;
+            List<String> permisos = Funciones.getColumnFromQuery(query);
+
+
+            foreach (Control control in this.Controls)
+            {
+                control.Visible = false;
+            }
+
+            foreach (string func in permisos)
+            {
+                this.Controls[func].Visible = true;
+            }
+
+            
+        }
+    }
+}

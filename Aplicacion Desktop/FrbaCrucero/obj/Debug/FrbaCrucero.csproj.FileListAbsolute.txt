@@ -1,1 +1,11 @@
 \\VBOXSVR\FrbaBus_1°C_2019\src\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.exe
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.Login.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.Menu.resources
