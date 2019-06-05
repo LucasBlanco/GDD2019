@@ -57,11 +57,29 @@
     <Compile Include="AbmPuerto\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRecorrido\Form1.cs">
+    <Compile Include="AbmRecorrido\AltaRecorrido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRecorrido\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AbmRecorrido\AltaRecorrido.Designer.cs">
+      <DependentUpon>AltaRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\BusquedaBorrarRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\BusquedaBorrarRecorrido.Designer.cs">
+      <DependentUpon>BusquedaBorrarRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRecorrido\ModificarRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRecorrido\ModificarRecorrido.Designer.cs">
+      <DependentUpon>ModificarRecorrido.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmRol\Form1.cs">
       <SubType>Form</SubType>
@@ -113,6 +131,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AbmRecorrido\AltaRecorrido.resx">
+      <DependentUpon>AltaRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

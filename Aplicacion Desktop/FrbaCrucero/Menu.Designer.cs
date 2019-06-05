@@ -54,6 +54,7 @@
             this.abm_recorrido.TabIndex = 1;
             this.abm_recorrido.Text = "Abm Recorrido";
             this.abm_recorrido.UseVisualStyleBackColor = true;
+            this.abm_recorrido.Click += new System.EventHandler(this.abm_recorrido_Click);
             // 
             // abm_crucero
             // 

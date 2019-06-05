@@ -20,6 +20,8 @@ namespace FrbaCrucero
             this.fecha = fecha;
             conexion = ConexionSQL.GetConexion();
             InitializeComponent();
+            username.Text = "admin";
+            password.Text = "w23e";
         }
 
         private void button1_Click(object sender, EventArgs e)

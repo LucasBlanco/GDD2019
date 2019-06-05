@@ -41,11 +41,6 @@ namespace PalcoNet
             
             conexion.Close();
             
-            
-            
-            
-            
-            
         }
 
         

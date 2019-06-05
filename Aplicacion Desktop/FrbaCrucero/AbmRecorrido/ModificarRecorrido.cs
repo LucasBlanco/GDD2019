@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FrbaCrucero.AbmRecorrido
 {
-    public partial class Form1 : Form
+    public partial class ModificarRecorrido : Form
     {
-        public Form1()
+        public ModificarRecorrido()
         {
             InitializeComponent();
         }
