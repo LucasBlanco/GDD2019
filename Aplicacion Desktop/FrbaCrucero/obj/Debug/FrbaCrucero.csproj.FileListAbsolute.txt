@@ -11,3 +11,6 @@ C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.Menu.resources
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.AltaRecorrido.resources
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.Main.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.BusquedaBorrarRecorrido.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.ModificarRecorrido.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.Form1.resources
