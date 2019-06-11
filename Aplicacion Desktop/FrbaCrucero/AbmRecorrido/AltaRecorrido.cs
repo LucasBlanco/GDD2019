@@ -13,10 +13,11 @@ namespace FrbaCrucero.AbmRecorrido
     
     public partial class AltaRecorrido : Form
     {
-        List<Tramo> tramos = new List<Tramo>();
+        List<Tramo> tramos = new List<Tramo>( );
         SqlConnection conexion;
         public AltaRecorrido()
         {
+            
             conexion = ConexionSQL.GetConexion();
             InitializeComponent();
             Funciones.CargarComboBox(inicio, "select id, nombre from Puerto", "id", "nombre");
