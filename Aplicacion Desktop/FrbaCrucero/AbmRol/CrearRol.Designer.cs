@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.funcionalidades = new System.Windows.Forms.CheckedListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // nombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(248, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(432, 29);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.nombre.Location = new System.Drawing.Point(248, 103);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(432, 29);
+            this.nombre.TabIndex = 0;
+            this.nombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -53,16 +53,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre";
             // 
-            // checkedListBox1
+            // funcionalidades
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.funcionalidades.FormattingEnabled = true;
+            this.funcionalidades.Items.AddRange(new object[] {
             "funcionalidad1",
             "funcionalidad2"});
-            this.checkedListBox1.Location = new System.Drawing.Point(79, 237);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(653, 316);
-            this.checkedListBox1.TabIndex = 3;
+            this.funcionalidades.Location = new System.Drawing.Point(79, 237);
+            this.funcionalidades.Name = "funcionalidades";
+            this.funcionalidades.Size = new System.Drawing.Size(653, 316);
+            this.funcionalidades.TabIndex = 3;
             // 
             // button1
             // 
@@ -72,6 +72,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Crear";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -99,9 +100,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.funcionalidades);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nombre);
             this.Name = "CrearRol";
             this.Text = "CrearRol";
             this.ResumeLayout(false);
@@ -111,9 +112,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox funcionalidades;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;

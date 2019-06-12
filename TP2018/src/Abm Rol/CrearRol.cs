@@ -76,7 +76,7 @@ namespace PalcoNet.Abm_Rol
         {
             if (nombre.Text != string.Empty)
             {
-                if(funcionalidades.CheckedItems.Count > 0)
+                if (funcionalidades.CheckedItems.Count > 0)
                 return true;
             }
             MessageBox.Show("Complete los campos obligatorios");

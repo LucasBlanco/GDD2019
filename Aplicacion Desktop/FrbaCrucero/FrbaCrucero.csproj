@@ -81,6 +81,12 @@
     <Compile Include="AbmRecorrido\ModificarRecorrido.Designer.cs">
       <DependentUpon>ModificarRecorrido.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmRol\BusquedaBorrarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\BusquedaBorrarRol.Designer.cs">
+      <DependentUpon>BusquedaBorrarRol.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmRol\CrearRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,11 +164,17 @@
     <EmbeddedResource Include="AbmRecorrido\ModificarRecorrido.resx">
       <DependentUpon>ModificarRecorrido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\BusquedaBorrarRol.resx">
+      <DependentUpon>BusquedaBorrarRol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmRol\CrearRol.resx">
       <DependentUpon>CrearRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmRol\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\ModificarRol.resx">
+      <DependentUpon>ModificarRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

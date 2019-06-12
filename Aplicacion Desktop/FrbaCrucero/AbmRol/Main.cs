@@ -30,8 +30,7 @@ namespace FrbaCrucero.AbmRol
 
         private void button2_Click(object sender, EventArgs e)
         {
-           // BusquedaBorrarRol modif = new BusquedaBorrarRol();
-           // modif.ShowDialog();
+            new BusquedaBorrarRol().ShowDialog();
         }
     }
 }

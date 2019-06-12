@@ -31,3 +31,5 @@ C:\Users\Oki\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.Proper
 C:\Users\Oki\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
 C:\Users\Oki\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.exe
 C:\Users\Oki\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
+C:\Users\Oki\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRol.BusquedaBorrarRol.resources
+C:\Users\Oki\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRol.ModificarRol.resources
