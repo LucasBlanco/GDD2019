@@ -14,3 +14,7 @@ C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.BusquedaBorrarRecorrido.resources
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.ModificarRecorrido.resources
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.Form1.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoEstadistico.CrucerosMasFueraDeServicio.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoEstadistico.Main.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoEstadistico.RecorridosConMasCabinasLibres.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.ListadoEstadistico.RecorridosConMasPasajes.resources

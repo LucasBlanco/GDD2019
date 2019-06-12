@@ -54,5 +54,10 @@ namespace FrbaCrucero
         {
             new AbmRecorrido.Main().ShowDialog();
         }
+
+        private void listado_estadistico_Click(object sender, EventArgs e)
+        {
+            new ListadoEstadistico.Main(fecha).ShowDialog();
+        }
     }
 }

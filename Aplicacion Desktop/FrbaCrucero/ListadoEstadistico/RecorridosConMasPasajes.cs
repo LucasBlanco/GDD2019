@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace FrbaCrucero.ListadoEstadistico
 {
-    public partial class Form1 : Form
+    public partial class RecorridosConMasPasajes : Form
     {
-        public Form1()
+        public RecorridosConMasPasajes(int anio, int semestre, string fechaActual)
         {
             InitializeComponent();
+            Funciones.CargarDataGridView(estadisticaDGW, "select * from [recorridosConMasPasajes](" + fechaActual + "," + anio + "," + semestre + " )");
         }
     }
 }

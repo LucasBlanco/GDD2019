@@ -60,8 +60,8 @@ namespace FrbaCrucero
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DateTime today = DateTime.Today;
-            Application.Run(new Login(today.ToString()));
+            string today = Funciones.today();
+            Application.Run(new Login(today));
         }
     }
 

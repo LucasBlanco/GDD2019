@@ -100,6 +100,7 @@
             this.listado_estadistico.TabIndex = 6;
             this.listado_estadistico.Text = "Estadisticas";
             this.listado_estadistico.UseVisualStyleBackColor = true;
+            this.listado_estadistico.Click += new System.EventHandler(this.listado_estadistico_Click);
             // 
             // Menu
             // 
