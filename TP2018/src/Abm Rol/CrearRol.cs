@@ -92,5 +92,10 @@ namespace PalcoNet.Abm_Rol
             }
         }
 
+        private void funcionalidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
