@@ -54,5 +54,10 @@ namespace FrbaCrucero
         {
             new AbmRecorrido.Main().ShowDialog();
         }
+
+        private void abm_rol_Click(object sender, EventArgs e)
+        {
+            new AbmRol.Main().ShowDialog();
+        }
     }
 }

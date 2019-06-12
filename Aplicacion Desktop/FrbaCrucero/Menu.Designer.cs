@@ -39,18 +39,21 @@
             // 
             // abm_rol
             // 
-            this.abm_rol.Location = new System.Drawing.Point(32, 35);
+            this.abm_rol.Location = new System.Drawing.Point(59, 65);
+            this.abm_rol.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.abm_rol.Name = "abm_rol";
-            this.abm_rol.Size = new System.Drawing.Size(93, 23);
+            this.abm_rol.Size = new System.Drawing.Size(171, 42);
             this.abm_rol.TabIndex = 0;
             this.abm_rol.Text = "Abm Rol";
             this.abm_rol.UseVisualStyleBackColor = true;
+            this.abm_rol.Click += new System.EventHandler(this.abm_rol_Click);
             // 
             // abm_recorrido
             // 
-            this.abm_recorrido.Location = new System.Drawing.Point(153, 35);
+            this.abm_recorrido.Location = new System.Drawing.Point(281, 65);
+            this.abm_recorrido.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.abm_recorrido.Name = "abm_recorrido";
-            this.abm_recorrido.Size = new System.Drawing.Size(98, 23);
+            this.abm_recorrido.Size = new System.Drawing.Size(180, 42);
             this.abm_recorrido.TabIndex = 1;
             this.abm_recorrido.Text = "Abm Recorrido";
             this.abm_recorrido.UseVisualStyleBackColor = true;
@@ -58,54 +61,59 @@
             // 
             // abm_crucero
             // 
-            this.abm_crucero.Location = new System.Drawing.Point(153, 64);
+            this.abm_crucero.Location = new System.Drawing.Point(281, 118);
+            this.abm_crucero.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.abm_crucero.Name = "abm_crucero";
-            this.abm_crucero.Size = new System.Drawing.Size(96, 23);
+            this.abm_crucero.Size = new System.Drawing.Size(176, 42);
             this.abm_crucero.TabIndex = 2;
             this.abm_crucero.Text = "Abm Crucero";
             this.abm_crucero.UseVisualStyleBackColor = true;
             // 
             // generar_viaje
             // 
-            this.generar_viaje.Location = new System.Drawing.Point(32, 63);
+            this.generar_viaje.Location = new System.Drawing.Point(59, 116);
+            this.generar_viaje.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.generar_viaje.Name = "generar_viaje";
-            this.generar_viaje.Size = new System.Drawing.Size(93, 23);
+            this.generar_viaje.Size = new System.Drawing.Size(171, 42);
             this.generar_viaje.TabIndex = 3;
             this.generar_viaje.Text = "Generar Viaje";
             this.generar_viaje.UseVisualStyleBackColor = true;
             // 
             // reservar_viaje
             // 
-            this.reservar_viaje.Location = new System.Drawing.Point(32, 93);
+            this.reservar_viaje.Location = new System.Drawing.Point(59, 172);
+            this.reservar_viaje.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.reservar_viaje.Name = "reservar_viaje";
-            this.reservar_viaje.Size = new System.Drawing.Size(93, 23);
+            this.reservar_viaje.Size = new System.Drawing.Size(171, 42);
             this.reservar_viaje.TabIndex = 4;
             this.reservar_viaje.Text = "Reservar Viaje";
             this.reservar_viaje.UseVisualStyleBackColor = true;
             // 
             // pago_reserva
             // 
-            this.pago_reserva.Location = new System.Drawing.Point(153, 94);
+            this.pago_reserva.Location = new System.Drawing.Point(281, 174);
+            this.pago_reserva.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pago_reserva.Name = "pago_reserva";
-            this.pago_reserva.Size = new System.Drawing.Size(96, 23);
+            this.pago_reserva.Size = new System.Drawing.Size(176, 42);
             this.pago_reserva.TabIndex = 5;
             this.pago_reserva.Text = "Pago Reserva";
             this.pago_reserva.UseVisualStyleBackColor = true;
             // 
             // listado_estadistico
             // 
-            this.listado_estadistico.Location = new System.Drawing.Point(32, 123);
+            this.listado_estadistico.Location = new System.Drawing.Point(59, 227);
+            this.listado_estadistico.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listado_estadistico.Name = "listado_estadistico";
-            this.listado_estadistico.Size = new System.Drawing.Size(93, 23);
+            this.listado_estadistico.Size = new System.Drawing.Size(171, 42);
             this.listado_estadistico.TabIndex = 6;
             this.listado_estadistico.Text = "Estadisticas";
             this.listado_estadistico.UseVisualStyleBackColor = true;
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 169);
+            this.ClientSize = new System.Drawing.Size(521, 312);
             this.Controls.Add(this.listado_estadistico);
             this.Controls.Add(this.pago_reserva);
             this.Controls.Add(this.reservar_viaje);
@@ -113,6 +121,7 @@
             this.Controls.Add(this.abm_crucero);
             this.Controls.Add(this.abm_recorrido);
             this.Controls.Add(this.abm_rol);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Menu";
             this.Text = "Menu";
             this.ResumeLayout(false);
