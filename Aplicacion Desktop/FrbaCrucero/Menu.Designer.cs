@@ -73,6 +73,7 @@
             this.generar_viaje.TabIndex = 3;
             this.generar_viaje.Text = "Generar Viaje";
             this.generar_viaje.UseVisualStyleBackColor = true;
+            this.generar_viaje.Click += new System.EventHandler(this.generar_viaje_Click);
             // 
             // reservar_viaje
             // 

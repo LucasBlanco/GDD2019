@@ -54,5 +54,11 @@ namespace FrbaCrucero
         {
             new AbmRecorrido.Main().ShowDialog();
         }
+
+        private void generar_viaje_Click(object sender, EventArgs e)
+        {
+            new GeneracionViaje.GenerarViaje().ShowDialog();
+        }
+
     }
 }
