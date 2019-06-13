@@ -8,24 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FrbaCrucero.AbmCrucero
+namespace FrbaCrucero.AbmRol
 {
     public partial class Main : Form
     {
-        string fecha;
-        public Main(string fecha)
+        public Main()
         {
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            new AbmCrucero.AltaCrucero(fecha).ShowDialog();
+            CrearRol alta = new CrearRol();
+            alta.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new AbmCrucero.TablaCrucero(fecha).ShowDialog();
+            new BusquedaBorrarRol().ShowDialog();
         }
     }
 }

@@ -14,14 +14,16 @@ namespace FrbaCrucero.AbmCrucero
     public partial class AltaCrucero : Form
     {
         SqlConnection conexion;
-
-        public AltaCrucero()
+        string fecha;
+        public AltaCrucero(string fecha)
         {
 
             InitializeComponent();
             conexion = ConexionSQL.GetConexion();
             Funciones.CargarComboBox(tipo_servicio, "select id, nombre as detalle from Servicio", "id", "detalle");
-            Funciones.CargarComboBox(marca, "select id, nombre as detalle from Servicio", "id", "detalle");
+            Funciones.CargarComboBox(marca, "select id, nombre as detalle from Marca_Crucero", "id", "detalle");
+            fecha_alta.MinDate = Funciones.fechaConfig();
+            cabinas.Columns["id_servicio_verdadero"].Visible = true;
 
         }
 
@@ -37,7 +39,10 @@ namespace FrbaCrucero.AbmCrucero
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cabinas.Rows.Add(tipo_servicio.SelectedValue.ToString(), numero.Text, piso.Text);
+            if (checkCamposNumericos())
+            {
+                cabinas.Rows.Add(tipo_servicio.Text, numero.Text, piso.Text, tipo_servicio.SelectedValue.ToString());
+            }
 
         }
 
@@ -56,18 +61,23 @@ namespace FrbaCrucero.AbmCrucero
                     // 3. add parameter to command, which will be passed to the stored procedure
                     DataTable cabinasDT = new DataTable();
 
-                    cabinasDT.Columns.Add("id_servicio", typeof(int));
-                    cabinasDT.Columns.Add("nro", typeof(int));
-                    cabinasDT.Columns.Add("piso", typeof(int));
+                    cabinasDT.Columns.Add("a", typeof(int));
+                    cabinasDT.Columns.Add("b", typeof(int));
+                    cabinasDT.Columns.Add("c", typeof(int));
 
                     int i = 0;
                     foreach (DataGridViewRow cabina in cabinas.Rows)
                     {
-                        DataRow dr = cabinasDT.NewRow();
-                        dr["id_servicio"] = Funciones.toInt(cabina.Cells["id_servicio_dt"].ToString());
-                        dr["piso"] = Funciones.toInt(cabina.Cells["piso_dt"].ToString());
-                        dr["nro"] = Funciones.toInt(cabina.Cells["nro_dt"].ToString()); 
-                        cabinasDT.Rows.Add(dr);
+                        if (cabina.Index != cabinas.Rows.Count - 1)
+                        {
+                            DataRow dr = cabinasDT.NewRow();
+                            dr["a"] = Funciones.toInt(cabina.Cells["nro_dt"].Value.ToString());
+                            dr["b"] = Funciones.toInt(cabina.Cells["piso_dt"].Value.ToString());
+
+                            dr["c"] = Funciones.toInt(cabina.Cells["id_servicio_verdadero"].Value.ToString());
+
+                            cabinasDT.Rows.Add(dr);
+                        }
                     }
 
                     cmd.Parameters.Add(new SqlParameter("@nombre", crucero.Text));
@@ -75,11 +85,12 @@ namespace FrbaCrucero.AbmCrucero
                     cmd.Parameters.Add(new SqlParameter("@id_marca", marca.SelectedValue.ToString()));
                     cmd.Parameters.Add(new SqlParameter("@fechaAlta", Convert.ToDateTime(fecha_alta.Value).ToString("dd-MM-yyyy")));
                     cmd.Parameters.Add(new SqlParameter("@cabinas", cabinasDT));
+                    cmd.Parameters.Add(new SqlParameter("@identificador", identificador.Text));
 
                     conexion.Open();
                     cmd.ExecuteNonQuery();
                     conexion.Close();
-                    MessageBox.Show("El recorrido fue creado con exito", "Exito!");
+                    MessageBox.Show("El crucero fue creado con exito", "Exito!");
                 }
                 catch (SqlException ex)
                 {
@@ -93,7 +104,39 @@ namespace FrbaCrucero.AbmCrucero
 
         public bool satisfiesControls()
         {
-            return true;
+            return (checkCamposVacios() && checkCabinas() && checkCamposNumericos());
+        }
+
+        private bool checkCamposVacios()
+        {
+            if (crucero.Text != string.Empty && modelo.Text != string.Empty && identificador.Text != string.Empty)
+            {
+                return true;
+            }
+            MessageBox.Show("Complete los campos obligatorios");
+            return false;
+        }
+
+        private bool checkCabinas()
+        {
+            if (cabinas.Rows.Count > 1)
+            {
+                return true;
+            }
+            MessageBox.Show("Ingrese por lo menos una cabina");
+            return false;
+        }
+
+        public bool checkCamposNumericos()
+        {
+            int parsedValue;
+
+            if (int.TryParse(numero.Text, out parsedValue) && int.TryParse(piso.Text, out parsedValue))
+            {
+                return true;
+            }
+            MessageBox.Show("Escriba los campos numericos correctamente");
+            return false;
         }
 
         class Cabina

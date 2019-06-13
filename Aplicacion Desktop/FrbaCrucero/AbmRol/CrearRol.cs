@@ -6,21 +6,24 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PalcoNet.Abm_Rol
+namespace FrbaCrucero.AbmRol
 {
     public partial class CrearRol : Form
     {
         SqlConnection conexion;
         public CrearRol()
         {
-            InitializeComponent();
-
-            Funciones.CargarCheckboxList(funcionalidades, "select * from Funcionalidad", "id", "nombre");
             conexion = ConexionSQL.GetConexion();
+            InitializeComponent();
+            Funciones.CargarCheckboxList(funcionalidades, "select id, nombre from Funcionalidad", "id", "nombre");
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,70 +35,64 @@ namespace PalcoNet.Abm_Rol
                 {
                     SqlCommand cmd = new SqlCommand("altaRol", conexion);
 
-                    // 2. set the command object so it knows to execute a stored procedure
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    // 3. add parameter to command, which will be passed to the stored procedure
-                    DataTable dataTable = new DataTable();
-                    dataTable.Columns.Add("id", typeof(int));
                     List<object> ids = Funciones.getIdsCheckSeleccionados(funcionalidades, "id");
-                    foreach( object id in ids){
-                        DataRow dr = dataTable.NewRow();
+                    DataTable funcionalidadesDT = new DataTable();
+
+                    funcionalidadesDT.Columns.Add("id", typeof(int));
+
+                    foreach (object id in ids)
+                    {
+                        DataRow dr = funcionalidadesDT.NewRow();
                         dr["id"] = id;
-                        dataTable.Rows.Add(dr);
+                        funcionalidadesDT.Rows.Add(dr);
                     }
+
                     cmd.Parameters.Add(new SqlParameter("@nombre", nombre.Text));
-                    cmd.Parameters.Add(new SqlParameter("@ids", dataTable));
-                    
+                    cmd.Parameters.Add(new SqlParameter("@ids", funcionalidadesDT));
+
+
                     conexion.Open();
                     cmd.ExecuteNonQuery();
                     conexion.Close();
-                    MessageBox.Show("El alta del rol se ha realizado con exito", "Exito!");
+                    MessageBox.Show("El rol fue creado con exito", "Exito!");
                 }
-
                 catch (SqlException ex)
                 {
-                    if (ex.Number == 50000)
-                        MessageBox.Show("Error: Ya existe rol con ese nombre");
-                    else
-                        MessageBox.Show("Error: " + ex.Message.ToString());
+                    Console.WriteLine("SQL Error" + ex.Message.ToString());
+                    MessageBox.Show("Error: " + ex.Message.ToString());
                     conexion.Close();
-
-
                 }
 
             }
+            
         }
 
         private bool satisfiesControls()
         {
-            return (checkCamposVacios() );
+            return (checkCamposVacios() && checkFuncionalidades());
         }
 
         private bool checkCamposVacios()
         {
             if (nombre.Text != string.Empty)
             {
-                if (funcionalidades.CheckedItems.Count > 0)
                 return true;
             }
             MessageBox.Show("Complete los campos obligatorios");
             return false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private bool checkFuncionalidades()
         {
-            nombre.Clear();
-            for (int i = 0; i < funcionalidades.Items.Count; i++)
+
+            if (funcionalidades.CheckedItems.Count > 0)
             {
-                funcionalidades.SetItemChecked(i, false);
+                return true;
             }
+            MessageBox.Show("Selecciona alguna funcionalidad");
+            return false;
         }
-
-        private void funcionalidades_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

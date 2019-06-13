@@ -14,7 +14,6 @@ C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\
 C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
 C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.exe
 C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
-C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache
 C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.AltaCrucero.resources
 C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.AltaRecorrido.resources
 C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.Main.resources
@@ -25,3 +24,10 @@ C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCr
 C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.exe
 C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
 C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.Main.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.EditarCrucero.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.TablaCrucero.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.Cancelar.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.FueraDeServicio.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.ReprogramarPasajeFueraDeServicio.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.CancelarPasajesTerminoVidaUtil.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.TerminoVidaUtil.resources

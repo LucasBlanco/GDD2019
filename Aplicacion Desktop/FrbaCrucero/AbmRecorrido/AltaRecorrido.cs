@@ -13,10 +13,11 @@ namespace FrbaCrucero.AbmRecorrido
     
     public partial class AltaRecorrido : Form
     {
-        List<Tramo> tramos = new List<Tramo>();
+        List<Tramo> tramos = new List<Tramo>( );
         SqlConnection conexion;
         public AltaRecorrido()
         {
+            
             conexion = ConexionSQL.GetConexion();
             InitializeComponent();
             Funciones.CargarComboBox(inicio, "select id, nombre from Puerto", "id", "nombre");
@@ -39,7 +40,8 @@ namespace FrbaCrucero.AbmRecorrido
                 MessageBox.Show("El inicio debe ser distinto al destino");
                 return;
             }
-             tramosDGW.Rows.Add(inicio.Text, destino.Text, precio.Value);
+
+            tramosDGW.Rows.Add(inicio.Text, destino.Text, precio.Value);
             tramos.Add(new Tramo(inicio.SelectedValue.ToString(), destino.SelectedValue.ToString(), precio.Value.ToString()));
             asignarValorAInicioYDeshabilitar(destino.SelectedValue.ToString());
             destino.SelectionLength = 0;

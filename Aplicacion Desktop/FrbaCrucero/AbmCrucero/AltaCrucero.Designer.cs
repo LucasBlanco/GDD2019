@@ -50,6 +50,7 @@
             this.id_servicio_dt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nro_dt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.piso_dt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_servicio_verdadero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cabinas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,7 +158,8 @@
             this.cabinas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_servicio_dt,
             this.nro_dt,
-            this.piso_dt});
+            this.piso_dt,
+            this.id_servicio_verdadero});
             this.cabinas.Location = new System.Drawing.Point(368, 28);
             this.cabinas.Name = "cabinas";
             this.cabinas.Size = new System.Drawing.Size(303, 219);
@@ -231,6 +233,11 @@
             this.piso_dt.HeaderText = "Piso";
             this.piso_dt.Name = "piso_dt";
             // 
+            // id_servicio_verdadero
+            // 
+            this.id_servicio_verdadero.HeaderText = "servicio";
+            this.id_servicio_verdadero.Name = "id_servicio_verdadero";
+            // 
             // AltaCrucero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,5 +295,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_servicio_dt;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_dt;
         private System.Windows.Forms.DataGridViewTextBoxColumn piso_dt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_servicio_verdadero;
     }
 }

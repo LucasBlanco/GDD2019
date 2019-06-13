@@ -57,7 +57,11 @@ namespace FrbaCrucero
 
         private void abm_crucero_Click(object sender, EventArgs e)
         {
-            new AbmCrucero.Main().ShowDialog();
+            new AbmCrucero.Main(fecha).ShowDialog();
+		}
+        private void abm_rol_Click(object sender, EventArgs e)
+        {
+            new AbmRol.Main().ShowDialog();
         }
     }
 }
