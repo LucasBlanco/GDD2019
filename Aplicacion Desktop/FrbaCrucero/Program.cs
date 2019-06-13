@@ -249,6 +249,7 @@ namespace FrbaCrucero
             return list;
         }
 
+
         internal static string getIdsCheckSeleccionadosCB(ComboBox checkBoxList)
         {
             return checkBoxList.SelectedValue.ToString();

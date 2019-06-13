@@ -81,17 +81,59 @@
     <Compile Include="AbmRecorrido\ModificarRecorrido.Designer.cs">
       <DependentUpon>ModificarRecorrido.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRol\Form1.cs">
+    <Compile Include="AbmRol\BusquedaBorrarRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRol\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AbmRol\BusquedaBorrarRol.Designer.cs">
+      <DependentUpon>BusquedaBorrarRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="CompraReservaPasaje\Form1.cs">
+    <Compile Include="AbmRol\CrearRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CompraReservaPasaje\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AbmRol\CrearRol.Designer.cs">
+      <DependentUpon>CrearRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\ModificarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\ModificarRol.Designer.cs">
+      <DependentUpon>ModificarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\InformeCodigoReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\InformeCodigoReserva.Designer.cs">
+      <DependentUpon>InformeCodigoReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\InformePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\InformePago.Designer.cs">
+      <DependentUpon>InformePago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\ReservaViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\ReservaViaje.Designer.cs">
+      <DependentUpon>ReservaViaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\CompraViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\CompraViaje.Designer.cs">
+      <DependentUpon>CompraViaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\SeleccionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompraReservaPasaje\SeleccionCliente.Designer.cs">
+      <DependentUpon>SeleccionCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -164,6 +206,21 @@
     <EmbeddedResource Include="AbmRecorrido\ModificarRecorrido.resx">
       <DependentUpon>ModificarRecorrido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\CompraViaje.resx">
+      <DependentUpon>CompraViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\InformeCodigoReserva.resx">
+      <DependentUpon>InformeCodigoReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\InformePago.resx">
+      <DependentUpon>InformePago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\ReservaViaje.resx">
+      <DependentUpon>ReservaViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompraReservaPasaje\SeleccionCliente.resx">
+      <DependentUpon>SeleccionCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListadoEstadistico\CrucerosMasFueraDeServicio.resx">
       <DependentUpon>CrucerosMasFueraDeServicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +232,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoEstadistico\RecorridosConMasPasajes.resx">
       <DependentUpon>RecorridosConMasPasajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\BusquedaBorrarRol.resx">
+      <DependentUpon>BusquedaBorrarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\CrearRol.resx">
+      <DependentUpon>CrearRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\ModificarRol.resx">
+      <DependentUpon>ModificarRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

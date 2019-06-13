@@ -36,7 +36,6 @@ namespace FrbaCrucero
                                 where u.id =" + idUser ;
             List<String> permisos = Funciones.getColumnFromQuery(query);
 
-
             foreach (Control control in this.Controls)
             {
                 control.Visible = false;
@@ -46,8 +45,6 @@ namespace FrbaCrucero
             {
                 this.Controls[func].Visible = true;
             }
-
-            
         }
 
         private void abm_recorrido_Click(object sender, EventArgs e)
@@ -58,6 +55,20 @@ namespace FrbaCrucero
         private void listado_estadistico_Click(object sender, EventArgs e)
         {
             new ListadoEstadistico.Main(fecha).ShowDialog();
+        }
+
+        private void abm_rol_Click(object sender, EventArgs e)
+        {
+            new AbmRol.Main().ShowDialog();
+        }
+        private void reservar_viaje_Click(object sender, EventArgs e)
+        {
+            new CompraReservaPasaje.ReservaViaje(fecha).ShowDialog();
+        }
+
+        private void pago_reserva_Click(object sender, EventArgs e)
+        {
+            new CompraReservaPasaje.CompraViaje(null, null).ShowDialog();
         }
     }
 }

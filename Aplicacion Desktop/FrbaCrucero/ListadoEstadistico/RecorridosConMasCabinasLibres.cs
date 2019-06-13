@@ -12,9 +12,10 @@ namespace FrbaCrucero.ListadoEstadistico
 {
     public partial class RecorridosConMasCabinasLibres : Form
     {
-        public RecorridosConMasCabinasLibres(int anio, int periodo)
+        public RecorridosConMasCabinasLibres(int anio, int semestre)
         {
             InitializeComponent();
+            Funciones.CargarDataGridView(estadisticaDGW, "select * from recorridosConMasCabinasLibres(" + anio + "," + semestre + " )");
         }
     }
 }

@@ -15,7 +15,7 @@ namespace FrbaCrucero.ListadoEstadistico
         public RecorridosConMasPasajes(int anio, int semestre, string fechaActual)
         {
             InitializeComponent();
-            Funciones.CargarDataGridView(estadisticaDGW, "select * from [recorridosConMasPasajes](" + fechaActual + "," + anio + "," + semestre + " )");
+            Funciones.CargarDataGridView(estadisticaDGW, "select * from recorridosConMasPasajes(" + anio + "," + semestre + " )");
         }
     }
 }

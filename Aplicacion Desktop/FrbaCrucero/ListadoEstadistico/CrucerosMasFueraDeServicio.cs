@@ -15,7 +15,7 @@ namespace FrbaCrucero.ListadoEstadistico
         public CrucerosMasFueraDeServicio(int anio, int semestre, string fechaActual)
         {
             InitializeComponent();
-            Funciones.CargarDataGridView(estadisticaDGW, "select * from crucerosConMasDiasFueraDeServicio(" + fechaActual + "," + anio + "," + semestre + " )");
+            Funciones.CargarDataGridView(estadisticaDGW, "select * from crucerosConMasDiasFueraDeServicio(" + anio + "," + semestre + " )");
         }
     }
 }

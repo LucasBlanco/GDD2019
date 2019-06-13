@@ -45,6 +45,7 @@
             this.abm_rol.TabIndex = 0;
             this.abm_rol.Text = "Abm Rol";
             this.abm_rol.UseVisualStyleBackColor = true;
+            this.abm_rol.Click += new System.EventHandler(this.abm_rol_Click);
             // 
             // abm_recorrido
             // 
@@ -82,6 +83,7 @@
             this.reservar_viaje.TabIndex = 4;
             this.reservar_viaje.Text = "Reservar Viaje";
             this.reservar_viaje.UseVisualStyleBackColor = true;
+            this.reservar_viaje.Click += new System.EventHandler(this.reservar_viaje_Click);
             // 
             // pago_reserva
             // 
@@ -91,6 +93,7 @@
             this.pago_reserva.TabIndex = 5;
             this.pago_reserva.Text = "Pago Reserva";
             this.pago_reserva.UseVisualStyleBackColor = true;
+            this.pago_reserva.Click += new System.EventHandler(this.pago_reserva_Click);
             // 
             // listado_estadistico
             // 
