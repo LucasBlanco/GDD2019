@@ -11,3 +11,17 @@ C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.Menu.resources
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.AltaRecorrido.resources
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.Main.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.exe.config
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.exe
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\bin\Debug\FrbaCrucero.pdb
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.AltaCrucero.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.AltaRecorrido.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.Main.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.Login.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.Menu.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.Properties.Resources.resources
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.csproj.GenerateResource.Cache
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.exe
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.pdb
+C:\Users\admin\Documents\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.Main.resources

@@ -45,11 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbmCrucero\AltaCrucero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\AltaCrucero.Designer.cs">
+      <DependentUpon>AltaCrucero.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmCrucero\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AbmCrucero\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmPuerto\Form1.cs">
       <SubType>Form</SubType>
@@ -131,6 +143,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AbmCrucero\AltaCrucero.resx">
+      <DependentUpon>AltaCrucero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmRecorrido\AltaRecorrido.resx">
       <DependentUpon>AltaRecorrido.cs</DependentUpon>
     </EmbeddedResource>
