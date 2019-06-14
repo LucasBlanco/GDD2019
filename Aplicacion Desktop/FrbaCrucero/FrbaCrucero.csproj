@@ -45,11 +45,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbmCrucero\AltaCrucero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\AltaCrucero.Designer.cs">
+      <DependentUpon>AltaCrucero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\Cancelar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Cancelar.Designer.cs">
+      <DependentUpon>Cancelar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\CancelarPasajesTerminoVidaUtil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\CancelarPasajesTerminoVidaUtil.Designer.cs">
+      <DependentUpon>CancelarPasajesTerminoVidaUtil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\EditarCrucero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\EditarCrucero.Designer.cs">
+      <DependentUpon>EditarCrucero.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmCrucero\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AbmCrucero\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\FueraDeServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\FueraDeServicio.Designer.cs">
+      <DependentUpon>FueraDeServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\ReprogramarPasajeFueraDeServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\ReprogramarPasajeFueraDeServicio.Designer.cs">
+      <DependentUpon>ReprogramarPasajeFueraDeServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\TablaCrucero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\TablaCrucero.Designer.cs">
+      <DependentUpon>TablaCrucero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmCrucero\TerminoVidaUtil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmCrucero\TerminoVidaUtil.Designer.cs">
+      <DependentUpon>TerminoVidaUtil.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmPuerto\Form1.cs">
       <SubType>Form</SubType>
@@ -191,21 +245,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AbmCrucero\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AbmCrucero\AltaCrucero.resx">
+      <DependentUpon>AltaCrucero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmRecorrido\AltaRecorrido.resx">
-      <DependentUpon>AltaRecorrido.cs</DependentUpon>
+    <EmbeddedResource Include="AbmCrucero\Cancelar.resx">
+      <DependentUpon>Cancelar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmRecorrido\BusquedaBorrarRecorrido.resx">
-      <DependentUpon>BusquedaBorrarRecorrido.cs</DependentUpon>
+    <EmbeddedResource Include="AbmCrucero\CancelarPasajesTerminoVidaUtil.resx">
+      <DependentUpon>CancelarPasajesTerminoVidaUtil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmRecorrido\Main.resx">
+    <EmbeddedResource Include="AbmCrucero\EditarCrucero.resx">
+      <DependentUpon>EditarCrucero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\FueraDeServicio.resx">
+      <DependentUpon>FueraDeServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmCrucero\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmRecorrido\ModificarRecorrido.resx">
-      <DependentUpon>ModificarRecorrido.cs</DependentUpon>
+    <EmbeddedResource Include="AbmCrucero\ReprogramarPasajeFueraDeServicio.resx">
+      <DependentUpon>ReprogramarPasajeFueraDeServicio.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="CompraReservaPasaje\CompraViaje.resx">
       <DependentUpon>CompraViaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,15 +296,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmRol\BusquedaBorrarRol.resx">
       <DependentUpon>BusquedaBorrarRol.cs</DependentUpon>
+</EmbeddedResource>
+
+    <EmbeddedResource Include="AbmCrucero\TablaCrucero.resx">
+      <DependentUpon>TablaCrucero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\CrearRol.resx">
-      <DependentUpon>CrearRol.cs</DependentUpon>
+    <EmbeddedResource Include="AbmCrucero\TerminoVidaUtil.resx">
+      <DependentUpon>TerminoVidaUtil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\Main.resx">
+    <EmbeddedResource Include="AbmRecorrido\AltaRecorrido.resx">
+      <DependentUpon>AltaRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRecorrido\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AbmRol\ModificarRol.resx">
-      <DependentUpon>ModificarRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -271,7 +336,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -52,11 +52,17 @@ namespace FrbaCrucero
             new AbmRecorrido.Main().ShowDialog();
         }
 
+
         private void listado_estadistico_Click(object sender, EventArgs e)
         {
             new ListadoEstadistico.Main(fecha).ShowDialog();
         }
 
+
+        private void abm_crucero_Click(object sender, EventArgs e)
+        {
+            new AbmCrucero.Main(fecha).ShowDialog();
+		}
         private void abm_rol_Click(object sender, EventArgs e)
         {
             new AbmRol.Main().ShowDialog();

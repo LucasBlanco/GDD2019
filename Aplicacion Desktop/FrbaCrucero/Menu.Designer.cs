@@ -65,6 +65,7 @@
             this.abm_crucero.TabIndex = 2;
             this.abm_crucero.Text = "Abm Crucero";
             this.abm_crucero.UseVisualStyleBackColor = true;
+            this.abm_crucero.Click += new System.EventHandler(this.abm_crucero_Click);
             // 
             // generar_viaje
             // 
