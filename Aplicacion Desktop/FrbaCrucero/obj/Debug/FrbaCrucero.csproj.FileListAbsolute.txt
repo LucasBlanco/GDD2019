@@ -48,3 +48,6 @@ C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.ReprogramarPasajeFueraDeServicio.resources
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.TablaCrucero.resources
 C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmCrucero.TerminoVidaUtil.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.AbmRecorrido.ModificarRecorrido.resources
+C:\Users\User\Documents\Repositorios\GDD2019\Aplicacion Desktop\FrbaCrucero\obj\Debug\FrbaCrucero.GeneracionViaje.GenerarViaje.resources

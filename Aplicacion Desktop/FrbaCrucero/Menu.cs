@@ -53,6 +53,7 @@ namespace FrbaCrucero
         }
 
 
+
         private void listado_estadistico_Click(object sender, EventArgs e)
         {
             new ListadoEstadistico.Main(fecha).ShowDialog();
@@ -76,5 +77,11 @@ namespace FrbaCrucero
         {
             new CompraReservaPasaje.CompraViaje(null, null).ShowDialog();
         }
+
+        private void generar_viaje_Click(object sender, EventArgs e)
+        {
+            new GeneracionViaje.GenerarViaje().ShowDialog();
+        }
+
     }
 }
