@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.codigo = new System.Windows.Forms.TextBox();
             this.Tramos = new System.Windows.Forms.GroupBox();
             this.precio = new System.Windows.Forms.NumericUpDown();
             this.tramosDGW = new System.Windows.Forms.DataGridView();
@@ -45,9 +44,11 @@
             this.inicio = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.codigo = new System.Windows.Forms.NumericUpDown();
             this.Tramos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.precio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tramosDGW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.codigo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,13 +60,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // codigo
-            // 
-            this.codigo.Location = new System.Drawing.Point(80, 18);
-            this.codigo.Name = "codigo";
-            this.codigo.Size = new System.Drawing.Size(487, 20);
-            this.codigo.TabIndex = 1;
             // 
             // Tramos
             // 
@@ -211,15 +205,27 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // codigo
+            // 
+            this.codigo.Location = new System.Drawing.Point(80, 19);
+            this.codigo.Maximum = new decimal(new int[] {
+            -159383553,
+            46653770,
+            5421,
+            0});
+            this.codigo.Name = "codigo";
+            this.codigo.Size = new System.Drawing.Size(487, 20);
+            this.codigo.TabIndex = 5;
+            // 
             // AltaRecorrido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 442);
+            this.Controls.Add(this.codigo);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Tramos);
-            this.Controls.Add(this.codigo);
             this.Controls.Add(this.label1);
             this.Name = "AltaRecorrido";
             this.Text = "AltaRecorrido";
@@ -227,6 +233,7 @@
             this.Tramos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.precio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tramosDGW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.codigo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,7 +242,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox codigo;
         private System.Windows.Forms.GroupBox Tramos;
         private System.Windows.Forms.DataGridView tramosDGW;
         private System.Windows.Forms.Button button1;
@@ -251,5 +257,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn destinoTramo;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioTramo;
         private System.Windows.Forms.NumericUpDown precio;
+        private System.Windows.Forms.NumericUpDown codigo;
     }
 }

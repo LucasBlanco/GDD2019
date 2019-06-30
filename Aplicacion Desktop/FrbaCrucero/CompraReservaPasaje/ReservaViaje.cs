@@ -28,6 +28,21 @@ namespace FrbaCrucero.CompraReservaPasaje
             filtroFecha.MinDate = Funciones.fechaConfig();
             Funciones.CargarComboBox(filtroOrigen, "select id, nombre from Puerto", "id", "nombre");
             Funciones.CargarComboBox(filtroDestino, "select id, nombre from Puerto", "id", "nombre");
+
+            DataTable dtFO = (DataTable)filtroOrigen.DataSource;
+            var nRow = dtFO.NewRow();
+            nRow[0] = -1;
+            nRow[1] = "Seleccionar";
+            dtFO.Rows.InsertAt(nRow, 0);
+            DataTable dtFD = (DataTable)filtroDestino.DataSource;
+            var nRow2 = dtFD.NewRow();
+            nRow2[0] = -1;
+            nRow2[1] = "Seleccionar";
+            dtFD.Rows.InsertAt(nRow2, 0);
+            filtroOrigen.SelectedIndex = 0;
+            filtroDestino.SelectedIndex = 0;
+            filtroOrigen.Update();
+            filtroDestino.Update();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,16 +52,13 @@ namespace FrbaCrucero.CompraReservaPasaje
 
         private void buscarViaje_Click(object sender, EventArgs e)
         {
+
             String fecha = Convert.ToDateTime(filtroFecha.Value).ToString("yyyy-MM-dd");
-            String query =  @"select cru.id cru_id, cru.nombre crucero, via.id via_id
-	                                                    from Crucero cru 
-	                                                    join Viaje via on cru.id = via.id_crucero
-	                                                    join Recorrido rec on rec.id = via.id_recorrido
-	                                                    where convert(date,via.fecha_inicio) ='" + fecha +
-                                                        "' and via.cancelado is null "+
-                                                        " and rec.inicio="+ filtroOrigen.SelectedValue.ToString()+
-                                                        " and rec.destino="+ filtroDestino.SelectedValue.ToString() +
-                                                        "and via.cant_cabinas_libres >= "+ cantPasajes.Value;
+
+            String query = @"select cru_id, via_id, cru_nombre as crucero from dbo.buscarViajes(" + filtroOrigen.SelectedValue.ToString() +
+                                    " , " + filtroDestino.SelectedValue.ToString()+
+                                    " , '" + fecha +
+                                    "' , " + cantPasajes.Value + ")";
             Funciones.CargarDataGridView(crucerosDGW, query);
             crucerosDGW.Columns["cru_id"].Visible = false;
             crucerosDGW.Columns["via_id"].Visible = false;
@@ -127,20 +139,29 @@ namespace FrbaCrucero.CompraReservaPasaje
                 {
                     if (this.clienteNuevo)
                     {
-                        SqlCommand cmd = new SqlCommand("altaCliente", conexion);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add(new SqlParameter("@nombre", cliente_nombre.Text));
-                        cmd.Parameters.Add(new SqlParameter("@apellido", cliente_apellido.Text));
-                        cmd.Parameters.Add(new SqlParameter("@direccion", cliente_direccion.Text));
-                        cmd.Parameters.Add(new SqlParameter("@telefono", cliente_telefono.Text));
-                        cmd.Parameters.Add(new SqlParameter("@mail", cliente_mail.Text));
-                        cmd.Parameters.Add(new SqlParameter("@dni", cliente_dni.Text));
-                        cmd.Parameters.Add(new SqlParameter("@fechaNacimiento", Convert.ToDateTime(cliente_nacimiento.Text).ToString("yyyy-MM-dd")));
-                        cmd.Parameters.Add(new SqlParameter("@id", 0)).Direction = ParameterDirection.Output;
-                        conexion.Open();
-                        cmd.ExecuteReader();
-                        idCliente = Convert.ToString(cmd.Parameters["@id"].Value);
-                        conexion.Close();
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("altaCliente", conexion);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add(new SqlParameter("@nombre", cliente_nombre.Text));
+                            cmd.Parameters.Add(new SqlParameter("@apellido", cliente_apellido.Text));
+                            cmd.Parameters.Add(new SqlParameter("@direccion", cliente_direccion.Text));
+                            cmd.Parameters.Add(new SqlParameter("@telefono", cliente_telefono.Text));
+                            cmd.Parameters.Add(new SqlParameter("@mail", cliente_mail.Text));
+                            cmd.Parameters.Add(new SqlParameter("@dni", cliente_dni.Text));
+                            cmd.Parameters.Add(new SqlParameter("@fechaNacimiento", Convert.ToDateTime(cliente_nacimiento.Text).ToString("yyyy-MM-dd")));
+                            cmd.Parameters.Add(new SqlParameter("@id", 0)).Direction = ParameterDirection.Output;
+                            conexion.Open();
+                            cmd.ExecuteReader();
+                            idCliente = Convert.ToString(cmd.Parameters["@id"].Value);
+                            conexion.Close();
+                        }
+                        catch (SqlException ex)
+                        {
+                            Funciones.handleSqlError(ex.Message.ToString(), "dni");
+                            conexion.Close();
+                        }
+                       
                     }
 
                     SqlCommand cmd2 = new SqlCommand("reservarViaje", conexion);
@@ -176,8 +197,7 @@ namespace FrbaCrucero.CompraReservaPasaje
                 }
                 catch (SqlException ex)
                 {
-                    Console.WriteLine("SQL Error" + ex.Message.ToString());
-                    MessageBox.Show("Error: " + ex.Message.ToString());
+                    Funciones.handleSqlError(ex.Message.ToString(), "dni");
                     conexion.Close();
                 }
 
@@ -202,11 +222,11 @@ namespace FrbaCrucero.CompraReservaPasaje
         
         private bool checkCabinas()
         {
-            if (Funciones.getIdsCheckSeleccionados(cabinasCBL, "id").Count() > 0)
+            if (Funciones.getIdsCheckSeleccionados(cabinasCBL, "id").Count() > cantPasajes.Value)
             {
                 return true;
             }
-            MessageBox.Show("Seleccione por lo menos una cabina");
+            MessageBox.Show("Seleccione por lo menos " + cantPasajes.Value + " cabinas");
             return false;
         }
         private bool checkCruceros()
@@ -217,6 +237,11 @@ namespace FrbaCrucero.CompraReservaPasaje
             }
             MessageBox.Show("Seleccione por lo menos un crucero");
             return false;
+        }
+
+        private void cabinasCBL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

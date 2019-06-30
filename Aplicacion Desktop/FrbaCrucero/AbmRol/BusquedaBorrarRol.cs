@@ -21,6 +21,7 @@ namespace FrbaCrucero.AbmRol
             QUERY = "SELECT nombre, (case when inhabilitado = 1 then 'si' else 'no' end) inhabilitado, id FROM Rol";
             conexion = ConexionSQL.GetConexion();
             Funciones.CargarDataGridView(rolesDGW, QUERY);
+            rolesDGW.Columns["id"].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

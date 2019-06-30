@@ -28,17 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cantDias = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.cantDias = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.cantDias)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cantDias
-            // 
-            this.cantDias.Location = new System.Drawing.Point(59, 27);
-            this.cantDias.Name = "cantDias";
-            this.cantDias.Size = new System.Drawing.Size(100, 20);
-            this.cantDias.TabIndex = 0;
             // 
             // label1
             // 
@@ -59,16 +53,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cantDias
+            // 
+            this.cantDias.Location = new System.Drawing.Point(78, 30);
+            this.cantDias.Name = "cantDias";
+            this.cantDias.Size = new System.Drawing.Size(90, 20);
+            this.cantDias.TabIndex = 3;
+            // 
             // ReprogramarPasajeFueraDeServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(180, 108);
+            this.Controls.Add(this.cantDias);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cantDias);
             this.Name = "ReprogramarPasajeFueraDeServicio";
             this.Text = "ReprogramarPasajeFueraDeServicio";
+            ((System.ComponentModel.ISupportInitialize)(this.cantDias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,8 +78,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox cantDias;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown cantDias;
     }
 }

@@ -40,11 +40,13 @@ namespace FrbaCrucero.AbmCrucero
 
             cmd.Parameters.Add(new SqlParameter("@idCrucero", this.idCrucero));
             cmd.Parameters.Add(new SqlParameter("@fecha", Convert.ToDateTime(fechaBaja.Value).ToString("dd-MM-yyyy")));
+            cmd.Parameters.Add(new SqlParameter("@cruceroReemplazante", 0)).Direction = ParameterDirection.Output;
 
             conexion.Open();
             cmd.ExecuteNonQuery();
             conexion.Close();
-            MessageBox.Show("Se ha encontrado un reemplazo con exito", "Exito!");
+            object hola = cmd.Parameters["@cruceroReemplazante"].Value;
+            MessageBox.Show("Los viajes seran realizados por el crucero: " + hola.ToString(), "Exito!");
         
         }
     }

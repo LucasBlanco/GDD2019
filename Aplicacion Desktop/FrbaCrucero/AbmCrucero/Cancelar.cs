@@ -36,7 +36,8 @@ namespace FrbaCrucero.AbmCrucero
         {
             if (satisfiesControls())
             {
-
+                try
+                {
                 SqlCommand cmd = new SqlCommand("ponerEnFueraDeServicioCruceroYCancelarPasajes", conexion);
 
                 // 2. set the command object so it knows to execute a stored procedure
@@ -53,6 +54,13 @@ namespace FrbaCrucero.AbmCrucero
                 cmd.ExecuteNonQuery();
                 conexion.Close();
                 MessageBox.Show("Se han cancelado los pasajes con exito", "Exito!");
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine("SQL Error" + ex.Message.ToString());
+                    MessageBox.Show("Error: " + ex.Message.ToString());
+                    conexion.Close();
+                }
             }
         }
 

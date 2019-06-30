@@ -60,8 +60,7 @@ namespace FrbaCrucero.AbmRol
                 }
                 catch (SqlException ex)
                 {
-                    Console.WriteLine("SQL Error" + ex.Message.ToString());
-                    MessageBox.Show("Error: " + ex.Message.ToString());
+                    Funciones.handleSqlError(ex.Message.ToString(), "nombre");
                     conexion.Close();
                 }
 

@@ -79,6 +79,7 @@ namespace FrbaCrucero.AbmRecorrido
             destino.SelectionLength = 0;
             codigo.Text = null;
             precio.Value = 0;
+            inicio.Enabled = true;
             tramosDGW.Rows.Clear();
         }
 
@@ -126,8 +127,7 @@ namespace FrbaCrucero.AbmRecorrido
                 }
                 catch (SqlException ex)
                 {
-                    Console.WriteLine("SQL Error" + ex.Message.ToString());
-                    MessageBox.Show("Error: " + ex.Message.ToString());
+                    Funciones.handleSqlError(ex.Message.ToString(), "codigo");
                     conexion.Close();
                 }
 

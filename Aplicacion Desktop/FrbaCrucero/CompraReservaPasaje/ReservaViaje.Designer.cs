@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cantPasajes = new System.Windows.Forms.NumericUpDown();
             this.buscarViaje = new System.Windows.Forms.Button();
             this.filtroDestino = new System.Windows.Forms.ComboBox();
             this.filtroOrigen = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,14 +58,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.cantPasajes = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
             this.cabinasCBL = new System.Windows.Forms.CheckedListBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cantPasajes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crucerosDGW)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_dni)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cantPasajes)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -83,6 +83,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda viajes";
+            // 
+            // cantPasajes
+            // 
+            this.cantPasajes.Location = new System.Drawing.Point(357, 63);
+            this.cantPasajes.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.cantPasajes.Name = "cantPasajes";
+            this.cantPasajes.Size = new System.Drawing.Size(173, 20);
+            this.cantPasajes.TabIndex = 4;
+            this.cantPasajes.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // buscarViaje
             // 
@@ -109,6 +126,16 @@
             this.filtroOrigen.Name = "filtroOrigen";
             this.filtroOrigen.Size = new System.Drawing.Size(200, 21);
             this.filtroOrigen.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(293, 65);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Cantidad";
+            this.label6.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -335,23 +362,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // cantPasajes
-            // 
-            this.cantPasajes.Location = new System.Drawing.Point(357, 63);
-            this.cantPasajes.Name = "cantPasajes";
-            this.cantPasajes.Size = new System.Drawing.Size(173, 20);
-            this.cantPasajes.TabIndex = 4;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(293, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Cantidad";
-            this.label6.Click += new System.EventHandler(this.label1_Click);
-            // 
             // cabinasCBL
             // 
             this.cabinasCBL.FormattingEnabled = true;
@@ -359,6 +369,7 @@
             this.cabinasCBL.Name = "cabinasCBL";
             this.cabinasCBL.Size = new System.Drawing.Size(261, 199);
             this.cabinasCBL.TabIndex = 8;
+            this.cabinasCBL.SelectedIndexChanged += new System.EventHandler(this.cabinasCBL_SelectedIndexChanged);
             // 
             // ReservaViaje
             // 
@@ -377,11 +388,11 @@
             this.Text = "CompraViaje";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cantPasajes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.crucerosDGW)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_dni)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cantPasajes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

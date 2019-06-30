@@ -15,18 +15,25 @@ namespace FrbaCrucero.AbmCrucero
     {
         SqlConnection conexion;
         int idCrucero;
-        public ReprogramarPasajeFueraDeServicio(int id)
+        string fechaInicio;
+        string fechaFin;
+        public ReprogramarPasajeFueraDeServicio(int id, string inicio, string fin)
         {
+            
+            idCrucero = id;
+            fechaInicio = inicio;
+            fechaFin = fin;
             InitializeComponent();
             conexion = ConexionSQL.GetConexion();
-
+            cantDias.Minimum = (Convert.ToDateTime(this.fechaFin) - Convert.ToDateTime(this.fechaInicio)).Days;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (satisfiesControls())
             {
-
+                try
+                {
                 SqlCommand cmd = new SqlCommand("postergarViajesDeCrucero", conexion);
 
                 // 2. set the command object so it knows to execute a stored procedure
@@ -35,11 +42,20 @@ namespace FrbaCrucero.AbmCrucero
 
                 cmd.Parameters.Add(new SqlParameter("@idCrucero", this.idCrucero));
                 cmd.Parameters.Add(new SqlParameter("@cantDias", Funciones.toInt(cantDias.Text)));
+                cmd.Parameters.Add(new SqlParameter("@fechaInicio", Convert.ToDateTime(this.fechaInicio).ToString("dd-MM-yyyy")));
+                cmd.Parameters.Add(new SqlParameter("@fechaFin", Convert.ToDateTime(this.fechaFin).ToString("dd-MM-yyyy")));
 
                 conexion.Open();
                 cmd.ExecuteNonQuery();
                 conexion.Close();
                 MessageBox.Show("Se han reprogramado los pasajes con exito", "Exito!");
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine("SQL Error" + ex.Message.ToString());
+                    MessageBox.Show("Error: " + ex.Message.ToString());
+                    conexion.Close();
+                }
             }
         }
 

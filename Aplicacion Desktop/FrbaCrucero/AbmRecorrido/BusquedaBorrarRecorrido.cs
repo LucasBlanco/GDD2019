@@ -23,6 +23,7 @@ namespace FrbaCrucero.AbmRecorrido
             Funciones.CargarComboBox(filtroInicio, "select id, nombre from Puerto", "id", "nombre");
             Funciones.CargarComboBox(filtroDestino, "select id, nombre from Puerto", "id", "nombre");
             recorridosDGW.AllowUserToAddRows = false;
+            recorridosDGW.Columns["id"].Visible = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,15 +35,15 @@ namespace FrbaCrucero.AbmRecorrido
         {
             filtroInicio.SelectionLength = 0;
             filtroDestino.SelectionLength = 0;
-            filtroCodigo = null;
+            filtroCodigo.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             String filters = "";
 
-            filters = Funciones.agregarFiltroAQuery(filters, "inicio", filtroInicio.SelectedValue.ToString());
-            filters = Funciones.agregarFiltroAQuery(filters, "destino", filtroDestino.SelectedValue.ToString());
+            filters = Funciones.agregarFiltroAQuery(filters, "inicio", filtroInicio.SelectedValue.ToString(), "=");
+            filters = Funciones.agregarFiltroAQuery(filters, "destino", filtroDestino.SelectedValue.ToString(), "=");
             if (filtroCodigo.Text.Length > 0)
             {
                 filters = Funciones.agregarFiltroAQuery(filters, "codigo", filtroCodigo.Text, null, "or");

@@ -35,8 +35,15 @@ namespace FrbaCrucero.AbmCrucero
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new ReprogramarPasajeFueraDeServicio(this.idCrucero).ShowDialog();
+            new ReprogramarPasajeFueraDeServicio(this.idCrucero, fecha_inicio.Text, fecha_fin.Text).ShowDialog();
 
         }
+
+        private void fecha_inicio_ValueChanged(object sender, EventArgs e)
+        {
+            fecha_fin.MinDate = Convert.ToDateTime(fecha_inicio.Text);
+
+        }
+ 
     }
 }

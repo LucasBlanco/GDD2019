@@ -20,8 +20,8 @@ namespace FrbaCrucero
             this.fecha = fecha;
             conexion = ConexionSQL.GetConexion();
             InitializeComponent();
-            //username.Text = "admin";
-            //password.Text = "w23e";
+            username.Text = "admin";
+            password.Text = "w23e";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +43,7 @@ namespace FrbaCrucero
                     string respuesta = Convert.ToString(cmd.Parameters["@respuesta"].Value);
                     int idUser = Convert.ToInt32(cmd.Parameters["@idUser"].Value);
                     conexion.Close();
+                    this.cancelarPasajes();
                     if (respuesta == "maxima cantidad de intentos fallidos"){
                         MessageBox.Show("Se alcanzo la maxima cantidad de intentos fallidos");
                     } else
@@ -71,6 +72,24 @@ namespace FrbaCrucero
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new Menu(-1, this.fecha).ShowDialog();
+        }
+
+        private void cancelarPasajes() {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("cancelarReservas", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                string fecha = Funciones.fechaConfig().ToString("yyyy-MM-dd");
+                cmd.Parameters.Add(new SqlParameter("@fecha", fecha));
+                conexion.Open();
+                cmd.ExecuteReader();
+                conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                conexion.Close();
+                MessageBox.Show("Error: " + ex.Message.ToString());
+            }
         }
     }
 }

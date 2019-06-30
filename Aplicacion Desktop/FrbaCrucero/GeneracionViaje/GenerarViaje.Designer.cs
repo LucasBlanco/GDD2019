@@ -44,7 +44,7 @@
             this.cmbCruceros.FormattingEnabled = true;
             this.cmbCruceros.Location = new System.Drawing.Point(127, 104);
             this.cmbCruceros.Name = "cmbCruceros";
-            this.cmbCruceros.Size = new System.Drawing.Size(200, 21);
+            this.cmbCruceros.Size = new System.Drawing.Size(358, 21);
             this.cmbCruceros.TabIndex = 0;
             // 
             // label1
@@ -60,7 +60,7 @@
             // 
             this.dtPickerInicio.Location = new System.Drawing.Point(127, 52);
             this.dtPickerInicio.Name = "dtPickerInicio";
-            this.dtPickerInicio.Size = new System.Drawing.Size(200, 20);
+            this.dtPickerInicio.Size = new System.Drawing.Size(358, 20);
             this.dtPickerInicio.TabIndex = 2;
             this.dtPickerInicio.ValueChanged += new System.EventHandler(this.dtPickerInicio_ValueChanged);
             // 
@@ -86,7 +86,7 @@
             // 
             this.dtPickerFin.Location = new System.Drawing.Point(127, 78);
             this.dtPickerFin.Name = "dtPickerFin";
-            this.dtPickerFin.Size = new System.Drawing.Size(200, 20);
+            this.dtPickerFin.Size = new System.Drawing.Size(358, 20);
             this.dtPickerFin.TabIndex = 4;
             this.dtPickerFin.ValueChanged += new System.EventHandler(this.dtPickerFin_ValueChanged);
             // 
@@ -104,12 +104,12 @@
             this.cmbRecorrido.FormattingEnabled = true;
             this.cmbRecorrido.Location = new System.Drawing.Point(127, 131);
             this.cmbRecorrido.Name = "cmbRecorrido";
-            this.cmbRecorrido.Size = new System.Drawing.Size(200, 21);
+            this.cmbRecorrido.Size = new System.Drawing.Size(358, 21);
             this.cmbRecorrido.TabIndex = 6;
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(252, 158);
+            this.btnGenerar.Location = new System.Drawing.Point(410, 158);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(75, 23);
             this.btnGenerar.TabIndex = 8;
@@ -121,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 219);
+            this.ClientSize = new System.Drawing.Size(549, 219);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbRecorrido);

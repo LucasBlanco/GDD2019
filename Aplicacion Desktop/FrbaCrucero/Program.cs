@@ -108,6 +108,16 @@ namespace FrbaCrucero
             conexion.Close();
         }
 
+        internal static void handleSqlError(string error, string campoUnique) {
+            if (error.Contains("clave duplicada"))
+            {
+                MessageBox.Show("El valor ingresado en "+campoUnique+" ya existe. Ingrese uno diferente");
+            }
+            else {
+                Console.WriteLine("SQL Error" + error);
+                MessageBox.Show("Error: " + error);
+            }
+        }
         internal static List<string> getColumnFromQuery(string query)
         {
             List<String> columnData = new List<String>();

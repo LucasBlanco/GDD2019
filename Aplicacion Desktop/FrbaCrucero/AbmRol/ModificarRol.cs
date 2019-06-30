@@ -87,10 +87,7 @@ namespace FrbaCrucero.AbmRol
 
                 catch (SqlException ex)
                 {
-                    if (ex.Number == 2601)
-                        MessageBox.Show("Error: Ya existe rol con ese nombre");
-                    else
-                        MessageBox.Show("Error: " + ex.Message.ToString());
+                    Funciones.handleSqlError(ex.Message.ToString(), "nombre");
                     conexion.Close();
 
                 }

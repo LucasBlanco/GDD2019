@@ -39,6 +39,18 @@ namespace FrbaCrucero.AbmCrucero
 
         private void button1_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow row in cabinas.Rows)
+            {
+                object _nro = row.Cells[1].Value;
+                object _piso = row.Cells[2].Value;
+                if (_nro != null && _piso != null) {
+                    if (_nro.ToString() == numero.Text && _piso.ToString() == piso.Text)
+                    {
+                        MessageBox.Show("Ya ingreso una cabina con el mismo numero y piso");
+                        return;
+                    }
+                }
+            }
             if (checkCamposNumericos())
             {
                 cabinas.Rows.Add(tipo_servicio.Text, numero.Text, piso.Text, tipo_servicio.SelectedValue.ToString());
@@ -94,8 +106,8 @@ namespace FrbaCrucero.AbmCrucero
                 }
                 catch (SqlException ex)
                 {
-                    Console.WriteLine("SQL Error" + ex.Message.ToString());
-                    MessageBox.Show("Error: " + ex.Message.ToString());
+                    Funciones.handleSqlError(ex.Message.ToString(), "identificador");
+                    
                     conexion.Close();
                 }
 
@@ -148,6 +160,23 @@ namespace FrbaCrucero.AbmCrucero
                 this.nro = nro;
                 this.piso = piso;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (cabinas.SelectedRows.Count > 0)
+            {
+                try {
+                 DataGridViewRow dgvr = cabinas.SelectedRows[0];
+                cabinas.Rows.RemoveAt(dgvr.Index);
+                cabinas.Update();
+                }
+                catch(Exception hola){
+                }
+               
+            }
+            else
+                MessageBox.Show("Elija una cabina antes de borrar");
         }
     }
 }

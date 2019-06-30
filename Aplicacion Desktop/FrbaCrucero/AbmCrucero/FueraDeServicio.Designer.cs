@@ -42,6 +42,7 @@
             this.fecha_inicio.Name = "fecha_inicio";
             this.fecha_inicio.Size = new System.Drawing.Size(200, 20);
             this.fecha_inicio.TabIndex = 0;
+            this.fecha_inicio.ValueChanged += new System.EventHandler(this.fecha_inicio_ValueChanged);
             // 
             // fecha_fin
             // 
