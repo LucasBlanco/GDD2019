@@ -18,7 +18,7 @@ namespace FrbaCrucero.AbmRol
         {
             conexion = ConexionSQL.GetConexion();
             InitializeComponent();
-            Funciones.CargarCheckboxList(funcionalidades, "select id, nombre from Funcionalidad", "id", "nombre");
+            Funciones.CargarCheckboxList(funcionalidades, "select id, nombre from SEGUNDA_VUELTA.Funcionalidad", "id", "nombre");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace FrbaCrucero.AbmRol
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("altaRol", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.altaRol", conexion);
 
                     cmd.CommandType = CommandType.StoredProcedure;
 

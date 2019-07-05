@@ -18,7 +18,7 @@ namespace FrbaCrucero.AbmRol
         public BusquedaBorrarRol()
         {
             InitializeComponent();
-            QUERY = "SELECT nombre, (case when inhabilitado = 1 then 'si' else 'no' end) inhabilitado, id FROM Rol";
+            QUERY = "SELECT nombre, (case when inhabilitado = 1 then 'si' else 'no' end) inhabilitado, id FROM SEGUNDA_VUELTA.Rol";
             conexion = ConexionSQL.GetConexion();
             Funciones.CargarDataGridView(rolesDGW, QUERY);
             rolesDGW.Columns["id"].Visible = false;
@@ -49,7 +49,7 @@ namespace FrbaCrucero.AbmRol
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("delete from Rol where id ="+id, conexion);
+                    SqlCommand cmd = new SqlCommand("delete from SEGUNDA_VUELTA.Rol where id =" + id, conexion);
 
                     conexion.Open();
                     cmd.ExecuteNonQuery();
@@ -79,7 +79,7 @@ namespace FrbaCrucero.AbmRol
                 filters = Funciones.agregarFiltroAQuery(filters, "nombre", nombre.Text);
             }
 
-            ConexionSQL.CargarDataGridView(rolesDGW, "Select nombre, (case when inhabilitado = 1 then 'si' else 'no' end) inhabilitado, id from Rol" + (filters.Length > 0 ? (" WHERE " + filters) : null));
+            ConexionSQL.CargarDataGridView(rolesDGW, "Select nombre, (case when inhabilitado = 1 then 'si' else 'no' end) inhabilitado, id from SEGUNDA_VUELTA.Rol" + (filters.Length > 0 ? (" WHERE " + filters) : null));
             rolesDGW.Update();
         }
 
@@ -93,7 +93,7 @@ namespace FrbaCrucero.AbmRol
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("update Rol set inhabilitado = 0 where id =" + id, conexion);
+                    SqlCommand cmd = new SqlCommand("update SEGUNDA_VUELTA.Rol set inhabilitado = 0 where id =" + id, conexion);
 
                     conexion.Open();
                     cmd.ExecuteNonQuery();

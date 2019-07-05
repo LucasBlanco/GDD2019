@@ -19,10 +19,10 @@ namespace FrbaCrucero.AbmRol
         {
             InitializeComponent();
             conexion = ConexionSQL.GetConexion();
-            Funciones.CargarCheckboxList(funcionalidades, "select * from Funcionalidad", "id", "nombre");
+            Funciones.CargarCheckboxList(funcionalidades, "select * from SEGUNDA_VUELTA.Funcionalidad", "id", "nombre");
             nombre.Text = rol.Cells["nombre"].Value.ToString();
             this.idRol = rol.Cells["id"].Value.ToString();
-            SqlCommand cmd = new SqlCommand("select id from Funcionalidad join Rol_funcionalidad on id = id_funcionalidad where id_rol=" + this.idRol, conexion);
+            SqlCommand cmd = new SqlCommand("select id from SEGUNDA_VUELTA.Funcionalidad join SEGUNDA_VUELTA.Rol_funcionalidad on id = id_funcionalidad where id_rol=" + this.idRol, conexion);
             cmd.CommandType = CommandType.Text;
             conexion.Open();
             SqlDataReader dr = cmd.ExecuteReader();
@@ -60,7 +60,7 @@ namespace FrbaCrucero.AbmRol
                 try
                 {
 
-                    SqlCommand cmd = new SqlCommand("modificacionRol", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.modificacionRol", conexion);
 
                     // 2. set the command object so it knows to execute a stored procedure
                     cmd.CommandType = CommandType.StoredProcedure;

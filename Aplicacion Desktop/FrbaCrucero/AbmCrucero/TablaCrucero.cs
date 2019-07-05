@@ -19,12 +19,12 @@ namespace FrbaCrucero.AbmCrucero
         public TablaCrucero(string fecha)
         {
             InitializeComponent();
-            QUERY = "SELECT Crucero.nombre, Crucero.modelo, Crucero.identificador, Marca_Crucero.nombre as marca, Crucero.fecha_alta, Crucero.id, Marca_Crucero.id as id_marca  FROM Crucero join Marca_Crucero on Marca_Crucero.id = Crucero.id_marca";
+            QUERY = "SELECT Crucero.nombre, Crucero.modelo, Crucero.identificador, Marca_Crucero.nombre as marca, Crucero.fecha_alta, Crucero.id, Marca_Crucero.id as id_marca  FROM SEGUNDA_VUELTA.Crucero join SEGUNDA_VUELTA.Marca_Crucero on Marca_Crucero.id = Crucero.id_marca";
             conexion = ConexionSQL.GetConexion();
             Funciones.CargarDataGridView(cruceros, QUERY);
             cruceros.Columns["id"].Visible = false;
             cruceros.Columns["id_marca"].Visible = false;
-            Funciones.CargarComboBox(filtro_marcaCB, "select id, nombre as detalle from Marca_Crucero", "id", "detalle");
+            Funciones.CargarComboBox(filtro_marcaCB, "select id, nombre as detalle from SEGUNDA_VUELTA.Marca_Crucero", "id", "detalle");
             DataTable dtFO = (DataTable)filtro_marcaCB.DataSource;
             var nRow = dtFO.NewRow();
             nRow[0] = -1;

@@ -26,8 +26,8 @@ namespace FrbaCrucero.CompraReservaPasaje
             InitializeComponent();
             cliente_nacimiento.MaxDate = Funciones.fechaConfig();
             filtroFecha.MinDate = Funciones.fechaConfig();
-            Funciones.CargarComboBox(filtroOrigen, "select id, nombre from Puerto", "id", "nombre");
-            Funciones.CargarComboBox(filtroDestino, "select id, nombre from Puerto", "id", "nombre");
+            Funciones.CargarComboBox(filtroOrigen, "select id, nombre from SEGUNDA_VUELTA.Puerto", "id", "nombre");
+            Funciones.CargarComboBox(filtroDestino, "select id, nombre from SEGUNDA_VUELTA.Puerto", "id", "nombre");
 
             DataTable dtFO = (DataTable)filtroOrigen.DataSource;
             var nRow = dtFO.NewRow();
@@ -55,14 +55,14 @@ namespace FrbaCrucero.CompraReservaPasaje
 
             String fecha = Convert.ToDateTime(filtroFecha.Value).ToString("yyyy-MM-dd");
 
-            String query = @"select cru_id, via_id, cru_nombre as crucero from dbo.buscarViajes(" + filtroOrigen.SelectedValue.ToString() +
+            String query = @"select cru_id, via_id, cru_nombre as crucero from SEGUNDA_VUELTA.buscarViajes(" + filtroOrigen.SelectedValue.ToString() +
                                     " , " + filtroDestino.SelectedValue.ToString()+
                                     " , '" + fecha +
                                     "' , " + cantPasajes.Value + ")";
             Funciones.CargarDataGridView(crucerosDGW, query);
             crucerosDGW.Columns["cru_id"].Visible = false;
             crucerosDGW.Columns["via_id"].Visible = false;
-            Funciones.CargarCheckboxList(cabinasCBL, "select id from Cabina where id= -1" , "id", "id");   
+            Funciones.CargarCheckboxList(cabinasCBL, "select id from SEGUNDA_VUELTA.Cabina where id= -1", "id", "id");   
                                                 
         }
 
@@ -84,13 +84,13 @@ namespace FrbaCrucero.CompraReservaPasaje
         private void button2_Click(object sender, EventArgs e)
         {
             string id_viaje = crucerosDGW.SelectedRows[0].Cells["via_id"].Value.ToString();
-            Funciones.CargarCheckboxList(cabinasCBL, "select id, concat('Nro: ', nro, ', Piso: ', piso, ', Precio: ', precio) nombre from cabinasLibresConDatos(" + id_viaje + ")", "id", "nombre");
+            Funciones.CargarCheckboxList(cabinasCBL, "select id, concat('Nro: ', nro, ', Piso: ', piso, ', Precio: ', precio) nombre from SEGUNDA_VUELTA.cabinasLibresConDatos(" + id_viaje + ")", "id", "nombre");
         }
 
         private void cliente_dni_ValueChanged(object sender, EventArgs e)
         {
-            string query =  @"select nombre, apellido, direccion, telefono, mail
-                        from Cliente
+            string query = @"select nombre, apellido, direccion, telefono, mail
+                        from SEGUNDA_VUELTA.Cliente
                         where dni =" + cliente_dni.Value.ToString();
 
             using (var command = new SqlCommand(query, conexion))
@@ -141,7 +141,7 @@ namespace FrbaCrucero.CompraReservaPasaje
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("altaCliente", conexion);
+                            SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.altaCliente", conexion);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.Add(new SqlParameter("@nombre", cliente_nombre.Text));
                             cmd.Parameters.Add(new SqlParameter("@apellido", cliente_apellido.Text));
@@ -164,7 +164,7 @@ namespace FrbaCrucero.CompraReservaPasaje
                        
                     }
 
-                    SqlCommand cmd2 = new SqlCommand("reservarViaje", conexion);
+                    SqlCommand cmd2 = new SqlCommand("SEGUNDA_VUELTA.reservarViaje", conexion);
                     cmd2.CommandType = CommandType.StoredProcedure;
 
                     string id_cliente = this.idCliente;
@@ -193,7 +193,7 @@ namespace FrbaCrucero.CompraReservaPasaje
                     conexion.Close();
                     MessageBox.Show("La reserva fue realizada con exito", "Exito!");
                     new InformeCodigoReserva(codigo, Funciones.getIdsCheckSeleccionados(cabinasCBL, "nombre"), ids, id_viaje).ShowDialog();
-                    Funciones.CargarCheckboxList(cabinasCBL, "select id from Cabina where id= -1", "id", "id"); 
+                    Funciones.CargarCheckboxList(cabinasCBL, "select id from SEGUNDA_VUELTA.Cabina where id= -1", "id", "id"); 
                 }
                 catch (SqlException ex)
                 {
@@ -222,7 +222,7 @@ namespace FrbaCrucero.CompraReservaPasaje
         
         private bool checkCabinas()
         {
-            if (Funciones.getIdsCheckSeleccionados(cabinasCBL, "id").Count() > cantPasajes.Value)
+            if (Funciones.getIdsCheckSeleccionados(cabinasCBL, "id").Count() >= cantPasajes.Value)
             {
                 return true;
             }

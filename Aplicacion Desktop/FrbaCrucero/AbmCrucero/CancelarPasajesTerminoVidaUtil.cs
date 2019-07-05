@@ -29,7 +29,7 @@ namespace FrbaCrucero.AbmCrucero
         {
             if (satisfiesControls())
             {
-                SqlCommand cmd = new SqlCommand("completarVidaUtilCruceroYCancelarPasajes", conexion);
+                SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.completarVidaUtilCruceroYCancelarPasajes", conexion);
 
                 // 2. set the command object so it knows to execute a stored procedure
                 cmd.CommandType = CommandType.StoredProcedure;

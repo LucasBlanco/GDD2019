@@ -14,14 +14,14 @@ namespace FrbaCrucero.AbmRecorrido
     public partial class BusquedaBorrarRecorrido : Form
     {
         SqlConnection conexion;
-        string QUERY = "select puerto_inicio.nombre inicio, puerto_destino.nombre destino, codigo, dbo.precioRecorrido(rec.id) as precio, case when rec.inhabilitado = 0 then 'No' else 'Si' end inhabilitado, rec.id from Recorrido rec join Puerto puerto_inicio on rec.inicio = puerto_inicio.id join Puerto puerto_destino on rec.destino = puerto_destino.id";
+        string QUERY = "select puerto_inicio.nombre inicio, puerto_destino.nombre destino, codigo, SEGUNDA_VUELTA.precioRecorrido(rec.id) as precio, case when rec.inhabilitado = 0 then 'No' else 'Si' end inhabilitado, rec.id from SEGUNDA_VUELTA.Recorrido rec join SEGUNDA_VUELTA.Puerto puerto_inicio on rec.inicio = puerto_inicio.id join SEGUNDA_VUELTA.Puerto puerto_destino on rec.destino = puerto_destino.id";
         public BusquedaBorrarRecorrido()
         {
             conexion = ConexionSQL.GetConexion();
             InitializeComponent();
             Funciones.CargarDataGridView(recorridosDGW, QUERY );
-            Funciones.CargarComboBox(filtroInicio, "select id, nombre from Puerto", "id", "nombre");
-            Funciones.CargarComboBox(filtroDestino, "select id, nombre from Puerto", "id", "nombre");
+            Funciones.CargarComboBox(filtroInicio, "select id, nombre from SEGUNDA_VUELTA.Puerto", "id", "nombre");
+            Funciones.CargarComboBox(filtroDestino, "select id, nombre from SEGUNDA_VUELTA.Puerto", "id", "nombre");
             recorridosDGW.AllowUserToAddRows = false;
             recorridosDGW.Columns["id"].Visible = false;
         }
@@ -65,7 +65,7 @@ namespace FrbaCrucero.AbmRecorrido
                 {
                     DataGridViewRow dgvr = recorridosDGW.SelectedRows[0];
                     conexion.Open();
-                    SqlCommand cmd = new SqlCommand("delete from Recorrido where id = " + dgvr.Cells[dgvr.Cells.Count -1].Value.ToString(), conexion);
+                    SqlCommand cmd = new SqlCommand("delete from SEGUNDA_VUELTA.Recorrido where id = " + dgvr.Cells[dgvr.Cells.Count - 1].Value.ToString(), conexion);
 
                     cmd.ExecuteNonQuery();
                     conexion.Close();
@@ -112,7 +112,7 @@ namespace FrbaCrucero.AbmRecorrido
                 {
                     DataGridViewRow dgvr = recorridosDGW.SelectedRows[0];
                     conexion.Open();
-                    SqlCommand cmd = new SqlCommand("update Recorrido set inhabilitado = 0 where id = " + dgvr.Cells[dgvr.Cells.Count - 1].Value.ToString(), conexion);
+                    SqlCommand cmd = new SqlCommand("update SEGUNDA_VUELTA.Recorrido set inhabilitado = 0 where id = " + dgvr.Cells[dgvr.Cells.Count - 1].Value.ToString(), conexion);
 
                     cmd.ExecuteNonQuery();
                     conexion.Close();

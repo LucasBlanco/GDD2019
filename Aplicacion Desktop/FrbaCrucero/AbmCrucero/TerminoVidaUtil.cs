@@ -32,7 +32,8 @@ namespace FrbaCrucero.AbmCrucero
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("completarVidaUtilCruceroYReprogramarPasajes", conexion);
+            try{
+            SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.completarVidaUtilCruceroYReprogramarPasajes", conexion);
 
             // 2. set the command object so it knows to execute a stored procedure
             cmd.CommandType = CommandType.StoredProcedure;
@@ -40,14 +41,20 @@ namespace FrbaCrucero.AbmCrucero
 
             cmd.Parameters.Add(new SqlParameter("@idCrucero", this.idCrucero));
             cmd.Parameters.Add(new SqlParameter("@fecha", Convert.ToDateTime(fechaBaja.Value).ToString("dd-MM-yyyy")));
-            cmd.Parameters.Add(new SqlParameter("@cruceroReemplazante", 0)).Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(new SqlParameter("@cruceroReemplazante", SqlDbType.VarChar, 1000)).Direction = ParameterDirection.Output;
 
             conexion.Open();
             cmd.ExecuteNonQuery();
             conexion.Close();
             object hola = cmd.Parameters["@cruceroReemplazante"].Value;
             MessageBox.Show("Los viajes seran realizados por el crucero: " + hola.ToString(), "Exito!");
-        
+        }
+            catch (SqlException ex)
+                {
+                    Funciones.handleSqlError(ex.Message.ToString(), "identificador");
+                    
+                    conexion.Close();
+                }
         }
     }
 }

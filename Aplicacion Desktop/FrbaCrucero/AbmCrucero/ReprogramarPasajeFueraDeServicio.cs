@@ -34,7 +34,7 @@ namespace FrbaCrucero.AbmCrucero
             {
                 try
                 {
-                SqlCommand cmd = new SqlCommand("postergarViajesDeCrucero", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.postergarViajesDeCrucero", conexion);
 
                 // 2. set the command object so it knows to execute a stored procedure
                 cmd.CommandType = CommandType.StoredProcedure;

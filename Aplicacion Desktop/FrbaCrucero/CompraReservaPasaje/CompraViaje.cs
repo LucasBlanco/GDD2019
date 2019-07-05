@@ -63,7 +63,7 @@ namespace FrbaCrucero.CompraReservaPasaje
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("pagarReserva", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.pagarReserva", conexion);
 
                     // 2. set the command object so it knows to execute a stored procedure
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -130,7 +130,7 @@ namespace FrbaCrucero.CompraReservaPasaje
         }
 
         private void calcularTotal() {
-            total.Text = Funciones.GetStringFromQuery("select sum(dbo.precioViaje(via.id, res.id_cabina)) precio from Viaje via join Reserva res on res.id_viaje = via.id where res.codigo=" + codigo_reserva.Text, "precio");
+            total.Text = Funciones.GetStringFromQuery("select sum(SEGUNDA_VUELTA.precioViaje(via.id, res.id_cabina)) precio from SEGUNDA_VUELTA.Viaje via join SEGUNDA_VUELTA.Reserva res on res.id_viaje = via.id where res.codigo=" + codigo_reserva.Text, "precio");
         }
 
         private bool satisfiesControls()
@@ -150,7 +150,7 @@ namespace FrbaCrucero.CompraReservaPasaje
 
         private bool checkReservaNoPaga()
         {
-            int pagada = Funciones.toInt(Funciones.GetStringFromQuery("select top 1 case when res.id_cabina in (select id_cabina from Pasaje pas where pas.id_viaje = via.id) then 1 else 0 end pagada from Reserva res join Viaje via on res.id_viaje = via.id where res.codigo=" + codigo_reserva.Text, "pagada"));
+            int pagada = Funciones.toInt(Funciones.GetStringFromQuery("select top 1 case when res.id_cabina in (select id_cabina from SEGUNDA_VUELTA.Pasaje pas where pas.id_viaje = via.id) then 1 else 0 end pagada from SEGUNDA_VUELTA.Reserva res join SEGUNDA_VUELTA.Viaje via on res.id_viaje = via.id where res.codigo=" + codigo_reserva.Text, "pagada"));
             if ( pagada == 0)
             {
                 return true;

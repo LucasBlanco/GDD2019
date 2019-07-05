@@ -28,7 +28,7 @@ namespace FrbaCrucero.CompraReservaPasaje
             codigo_reserva.Text = codigo;
             cabinasDGW.DataSource = cabinasDT;
             string ids_cabinas = "("+ String.Join(",", ids)+")";
-            total.Text = Funciones.GetStringFromQuery("select sum(dbo.precioViaje(" + idViaje + ", cab.id)) precio from Cabina cab where cab.id in " + ids_cabinas, "precio");
+            total.Text = Funciones.GetStringFromQuery("select sum(SEGUNDA_VUELTA.precioViaje(" + idViaje + ", cab.id)) precio from SEGUNDA_VUELTA.Cabina cab where cab.id in " + ids_cabinas, "precio");
             
         }
 

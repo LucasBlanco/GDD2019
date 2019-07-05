@@ -20,8 +20,8 @@ namespace FrbaCrucero.AbmRecorrido
             
             conexion = ConexionSQL.GetConexion();
             InitializeComponent();
-            Funciones.CargarComboBox(inicio, "select id, nombre from Puerto", "id", "nombre");
-            Funciones.CargarComboBox(destino, "select id, nombre from Puerto", "id", "nombre");
+            Funciones.CargarComboBox(inicio, "select id, nombre from SEGUNDA_VUELTA.Puerto", "id", "nombre");
+            Funciones.CargarComboBox(destino, "select id, nombre from SEGUNDA_VUELTA.Puerto", "id", "nombre");
             tramosDGW.AllowUserToAddRows = false;
         }
 
@@ -91,7 +91,7 @@ namespace FrbaCrucero.AbmRecorrido
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("altaRecorrido", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.altaRecorrido", conexion);
 
                     // 2. set the command object so it knows to execute a stored procedure
                     cmd.CommandType = CommandType.StoredProcedure;

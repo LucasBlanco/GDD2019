@@ -38,7 +38,7 @@ namespace FrbaCrucero.AbmCrucero
             {
                 try
                 {
-                SqlCommand cmd = new SqlCommand("ponerEnFueraDeServicioCruceroYCancelarPasajes", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.ponerEnFueraDeServicioCruceroYCancelarPasajes", conexion);
 
                 // 2. set the command object so it knows to execute a stored procedure
                 cmd.CommandType = CommandType.StoredProcedure;

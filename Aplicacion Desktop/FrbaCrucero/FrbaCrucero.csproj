@@ -266,7 +266,6 @@
     <EmbeddedResource Include="AbmCrucero\ReprogramarPasajeFueraDeServicio.resx">
       <DependentUpon>ReprogramarPasajeFueraDeServicio.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="CompraReservaPasaje\CompraViaje.resx">
       <DependentUpon>CompraViaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,8 +295,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmRol\BusquedaBorrarRol.resx">
       <DependentUpon>BusquedaBorrarRol.cs</DependentUpon>
-</EmbeddedResource>
-
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmCrucero\TablaCrucero.resx">
       <DependentUpon>TablaCrucero.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,14 +308,12 @@
     <EmbeddedResource Include="AbmRecorrido\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="AbmRecorrido\ModificarRecorrido.resx">
       <DependentUpon>ModificarRecorrido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneracionViaje\GenerarViaje.resx">
       <DependentUpon>GenerarViaje.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

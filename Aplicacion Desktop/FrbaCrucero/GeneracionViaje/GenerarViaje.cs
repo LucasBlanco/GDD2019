@@ -22,17 +22,17 @@ namespace FrbaCrucero.GeneracionViaje
             
             Funciones.CargarComboBox(cmbCruceros, query(), "id", "nombre");
             cmbCruceros.Text = "";
-            Funciones.CargarComboBox(cmbRecorrido, "select rec.id id, concat('codigo: ', rec.codigo, ', inicio: ', pr_inicio.nombre, ', destino: ',pr_destino.nombre) codigo from Recorrido rec join Puerto pr_inicio on rec.inicio = pr_inicio.id join Puerto pr_destino on rec.destino = pr_destino.id", "id", "codigo");
+            Funciones.CargarComboBox(cmbRecorrido, "select rec.id id, concat('codigo: ', rec.codigo, ', inicio: ', pr_inicio.nombre, ', destino: ',pr_destino.nombre) codigo from SEGUNDA_VUELTA.Recorrido rec join SEGUNDA_VUELTA.Puerto pr_inicio on rec.inicio = pr_inicio.id join SEGUNDA_VUELTA.Puerto pr_destino on rec.destino = pr_destino.id", "id", "codigo");
         }
 
         private string query() {
-            return "select id, identificador as nombre from Crucero cru where cru.id in (select id from dbo.crucerosDisponibles('" + Convert.ToDateTime(dtPickerInicio.Value).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(dtPickerFin.Value).ToString("yyyy-MM-dd") + "'))";
+            return "select id, identificador as nombre from SEGUNDA_VUELTA.Crucero cru where cru.id in (select id from SEGUNDA_VUELTA.crucerosDisponibles('" + Convert.ToDateTime(dtPickerInicio.Value).ToString("yyyy-MM-dd") + "','" + Convert.ToDateTime(dtPickerFin.Value).ToString("yyyy-MM-dd") + "'))";
         }
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             if (satisfiesControls()) {
-                try { 
-                    SqlCommand cmd = new SqlCommand("altaViaje", conexion);
+                try {
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.altaViaje", conexion);
 
                     // 2. set the command object so it knows to execute a stored procedure
                     cmd.CommandType = CommandType.StoredProcedure;

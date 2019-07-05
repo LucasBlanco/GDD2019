@@ -22,22 +22,22 @@ namespace FrbaCrucero.AbmRecorrido
             conexion = ConexionSQL.GetConexion();
             InitializeComponent();
             this.idRecorrido = dgvr.Cells[dgvr.Cells.Count - 1].Value.ToString();
-            codigo.Text = Funciones.GetStringFromQuery("select codigo from Recorrido where id=" + idRecorrido, "codigo");
+            codigo.Text = Funciones.GetStringFromQuery("select codigo from SEGUNDA_VUELTA.Recorrido where id=" + idRecorrido, "codigo");
 
             string queryDGW = @"select puerto_inicio.nombre inicio, puerto_destino.nombre destino, rec.precio precio
-                        from Puerto_recorrido rec 
-                        join Puerto puerto_inicio on rec.id_puerto_origen = puerto_inicio.id 
-                        join Puerto puerto_destino on rec.id_puerto_destino = puerto_destino.id 
+                        from SEGUNDA_VUELTA.Puerto_recorrido rec 
+                        join SEGUNDA_VUELTA.Puerto puerto_inicio on rec.id_puerto_origen = puerto_inicio.id 
+                        join SEGUNDA_VUELTA.Puerto puerto_destino on rec.id_puerto_destino = puerto_destino.id 
                         where rec.id_recorrido =" + idRecorrido;
             Funciones.CargarDataGridView(tramosDGW, queryDGW);
             tramosDGW.Update();
-            
 
-            string puertoInicio = Funciones.GetStringFromQuery("select inicio from Recorrido where id="+ idRecorrido, "inicio");
-            string puertoDestino = Funciones.GetStringFromQuery("select destino from Recorrido where id=" + idRecorrido, "destino");
 
-            string queryTramos =  @"select id_puerto_origen inicio, id_puerto_destino destino, precio
-                        from Puerto_recorrido
+            string puertoInicio = Funciones.GetStringFromQuery("select inicio from SEGUNDA_VUELTA.Recorrido where id=" + idRecorrido, "inicio");
+            string puertoDestino = Funciones.GetStringFromQuery("select destino from SEGUNDA_VUELTA.Recorrido where id=" + idRecorrido, "destino");
+
+            string queryTramos = @"select id_puerto_origen inicio, id_puerto_destino destino, precio
+                        from SEGUNDA_VUELTA.Puerto_recorrido
                         where id_recorrido =" + idRecorrido;
 
             using (var command = new SqlCommand(queryTramos, conexion))
@@ -55,10 +55,10 @@ namespace FrbaCrucero.AbmRecorrido
                 }
                 conexion.Close();
             }
-            
-            
-            Funciones.CargarComboBox(inicio, "select id, nombre from Puerto", "id", "nombre");
-            Funciones.CargarComboBox(destino, "select id, nombre from Puerto", "id", "nombre");
+
+
+            Funciones.CargarComboBox(inicio, "select id, nombre from SEGUNDA_VUELTA.Puerto", "id", "nombre");
+            Funciones.CargarComboBox(destino, "select id, nombre from SEGUNDA_VUELTA.Puerto", "id", "nombre");
             inicio.Enabled = false;
             inicio.SelectedValue = tramos[tramos.Count()-1].destino;
             tramosDGW.AllowUserToAddRows = false;
@@ -117,7 +117,7 @@ namespace FrbaCrucero.AbmRecorrido
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("modificacionRecorrido", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.modificacionRecorrido", conexion);
                     // 2. set the command object so it knows to execute a stored procedure
                     cmd.CommandType = CommandType.StoredProcedure;
 

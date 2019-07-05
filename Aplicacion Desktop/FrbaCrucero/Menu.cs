@@ -21,7 +21,7 @@ namespace FrbaCrucero
             if (idUser == -1) {
                 idUser = Convert.ToInt32(
                             Funciones.GetStringFromQuery(
-                                "select id from Usuario where nombre = 'cliente'",
+                                "select id from SEGUNDA_VUELTA.Usuario where nombre = 'cliente'",
                                 "id"
                             )
                         );
@@ -29,10 +29,10 @@ namespace FrbaCrucero
 
             this.fecha = fecha;
             string query = @"select f.nombre 
-                                from Usuario u
-                                join Usuario_rol ur on ur.id_usuario = u.id
-                                join Rol_funcionalidad rf on rf.id_rol = ur.id_rol
-                                join Funcionalidad f on rf.id_funcionalidad = f.id
+                                from SEGUNDA_VUELTA.Usuario u
+                                join SEGUNDA_VUELTA.Usuario_rol ur on ur.id_usuario = u.id
+                                join SEGUNDA_VUELTA.Rol_funcionalidad rf on rf.id_rol = ur.id_rol
+                                join SEGUNDA_VUELTA.Funcionalidad f on rf.id_funcionalidad = f.id
                                 where u.id =" + idUser ;
             List<String> permisos = Funciones.getColumnFromQuery(query);
 

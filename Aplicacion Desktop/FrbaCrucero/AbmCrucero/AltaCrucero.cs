@@ -20,8 +20,8 @@ namespace FrbaCrucero.AbmCrucero
 
             InitializeComponent();
             conexion = ConexionSQL.GetConexion();
-            Funciones.CargarComboBox(tipo_servicio, "select id, nombre as detalle from Servicio", "id", "detalle");
-            Funciones.CargarComboBox(marca, "select id, nombre as detalle from Marca_Crucero", "id", "detalle");
+            Funciones.CargarComboBox(tipo_servicio, "select id, nombre as detalle from SEGUNDA_VUELTA.Servicio", "id", "detalle");
+            Funciones.CargarComboBox(marca, "select id, nombre as detalle from SEGUNDA_VUELTA.Marca_Crucero", "id", "detalle");
             fecha_alta.MinDate = Funciones.fechaConfig();
             cabinas.Columns["id_servicio_verdadero"].Visible = true;
 
@@ -65,7 +65,7 @@ namespace FrbaCrucero.AbmCrucero
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("altaCrucero", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.altaCrucero", conexion);
 
                     // 2. set the command object so it knows to execute a stored procedure
                     cmd.CommandType = CommandType.StoredProcedure;

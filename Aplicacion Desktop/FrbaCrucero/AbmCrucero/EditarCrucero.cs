@@ -19,14 +19,14 @@ namespace FrbaCrucero.AbmCrucero
         {
             InitializeComponent();
             conexion = ConexionSQL.GetConexion();
-            Funciones.CargarComboBox(tipo_servicio, "select id, nombre as detalle from Servicio", "id", "detalle");
-            Funciones.CargarComboBox(marca, "select id, nombre as detalle from Marca_Crucero", "id", "detalle");
+            Funciones.CargarComboBox(tipo_servicio, "select id, nombre as detalle from SEGUNDA_VUELTA.Servicio", "id", "detalle");
+            Funciones.CargarComboBox(marca, "select id, nombre as detalle from SEGUNDA_VUELTA.Marca_Crucero", "id", "detalle");
             marca.SelectedValue = cruceroR.Cells["id_marca"].Value.ToString();
             modelo.Text = cruceroR.Cells["modelo"].Value.ToString();
             crucero.Text = cruceroR.Cells["nombre"].Value.ToString();
             identificador.Text = cruceroR.Cells["identificador"].Value.ToString();
             this.idCrucero = Funciones.toInt(cruceroR.Cells["id"].Value.ToString());
-            Funciones.CargarDataGridView(cabinas, "select cab.id, cab.nro, cab.piso, srv.nombre as servicio, srv.id servicio_id from Cabina cab join Servicio srv on cab.id_servicio = srv.id where cab.borrada is null and cab.id_crucero =" + this.idCrucero);
+            Funciones.CargarDataGridView(cabinas, "select cab.id, cab.nro, cab.piso, srv.nombre as servicio, srv.id servicio_id from SEGUNDA_VUELTA.Cabina cab join SEGUNDA_VUELTA.Servicio srv on cab.id_servicio = srv.id where cab.borrada is null and cab.id_crucero =" + this.idCrucero);
             cabinas.Columns["id"].Visible = false;
 
         }
@@ -38,7 +38,7 @@ namespace FrbaCrucero.AbmCrucero
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("modificacionCrucero", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.modificacionCrucero", conexion);
 
                     // 2. set the command object so it knows to execute a stored procedure
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -149,7 +149,7 @@ namespace FrbaCrucero.AbmCrucero
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("modificacionCrucero", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.modificacionCrucero", conexion);
 
                     // 2. set the command object so it knows to execute a stored procedure
                     cmd.CommandType = CommandType.StoredProcedure;

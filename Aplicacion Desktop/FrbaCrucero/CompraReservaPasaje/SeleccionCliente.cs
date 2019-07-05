@@ -20,8 +20,8 @@ namespace FrbaCrucero.CompraReservaPasaje
             this.reserva = reserva;
             conexion = ConexionSQL.GetConexion();
             InitializeComponent();
-            string query =  @"select id, nombre, apellido, direccion, telefono, mail, fecha_nacimiento
-                        from Cliente
+            string query = @"select id, nombre, apellido, direccion, telefono, mail, fecha_nacimiento
+                        from SEGUNDA_VUELTA.Cliente
                         where dni =" + dni;
             Funciones.CargarDataGridView(clientesDGW, query);
             clientesDGW.Columns["id"].Visible = false;

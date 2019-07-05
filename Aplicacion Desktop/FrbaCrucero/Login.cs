@@ -31,7 +31,7 @@ namespace FrbaCrucero
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("loginUser", conexion);
+                    SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.loginUser", conexion);
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@usuario", username.Text));
@@ -77,7 +77,7 @@ namespace FrbaCrucero
         private void cancelarPasajes() {
             try
             {
-                SqlCommand cmd = new SqlCommand("cancelarReservas", conexion);
+                SqlCommand cmd = new SqlCommand("SEGUNDA_VUELTA.cancelarReservas", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 string fecha = Funciones.fechaConfig().ToString("yyyy-MM-dd");
                 cmd.Parameters.Add(new SqlParameter("@fecha", fecha));
